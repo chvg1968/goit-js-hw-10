@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <title>Country Guide App</title>
+    <!--Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <div class="container">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="country-inp"
+          placeholder="Enter a country name here..."
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <!-- Script -->
+    <script src="index.js" type="module"></script>
   </body>
 </html>
