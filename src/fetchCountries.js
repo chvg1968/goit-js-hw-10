@@ -1,13 +1,15 @@
-export const fetchCountries = async (countryName) => {
-	const finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
-	const response = await fetch(finalURL);
-	const data = await response.json();
-	return data;
-  };
-  
-  
-  
-
+export function fetchCountryData(countryName) {
+  const finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
+  return fetch(finalURL).then((response) => {
+    if (response.ok) {
+      return response.json().then((data) => {
+        return data[0];
+      });
+    } else {
+      throw new Error("Network response was not ok.");
+    }
+  });
+}
 
 
 
