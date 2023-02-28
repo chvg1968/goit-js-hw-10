@@ -1,5 +1,7 @@
 import { debounce } from "lodash";
 import { fetchCountryData } from "./fetchCountries.js";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 
 const countryInp = document.getElementById("country-inp");
 const result = document.getElementById("result");
@@ -8,7 +10,7 @@ const DEBOUNCE_DELAY = 300;
 const handleInput = debounce(() => {
   const countryName = countryInp.value.trim();
   if (countryName.length === 0) {
-    result.innerHTML = `<h3>The input field cannot be empty</h3>`;
+    Notify.failure('The input field cannot be empty');
   } else {
     fetchCountryData(countryName)
       .then((data) => {
@@ -48,7 +50,7 @@ const handleInput = debounce(() => {
         `;
       })
       .catch(() => {
-        result.innerHTML = `<h3>Please enter a valid country name.</h3>`;
+        Notify.failure('Please enter a valid country name');
       });
   }
 }, DEBOUNCE_DELAY);
