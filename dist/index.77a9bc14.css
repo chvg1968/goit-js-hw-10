@@ -22,28 +22,20 @@ body {
   box-shadow: 0 1.25em 1.8em #00000040;
 }
 
-.search-wrapper {
-  grid-template-columns: 9fr 3fr;
-  gap: 1.25em;
-  display: grid;
-}
-
-.search-wrapper button {
-  color: #fff;
-  background-color: #ffad9b;
+input {
+  color: #222a43;
+  background-color: #f5f5f5;
   border: none;
   border-radius: 1.5em;
-  padding: .8em 0;
-  font-size: 1em;
+  outline: none;
+  padding: .8em 1.2em;
+  font-size: 1.2em;
+  box-shadow: 0 .25em .5em #0000001a;
 }
 
-.search-wrapper input {
-  color: #222a43;
-  border: none;
-  border-bottom: 2px solid #ffad9b;
-  outline: none;
-  padding: 0 .62em;
-  font-size: 1em;
+input:focus {
+  background-color: #fff;
+  box-shadow: 0 .5em 1em #0000001a;
 }
 
 #result {
